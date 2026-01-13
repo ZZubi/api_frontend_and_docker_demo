@@ -16,11 +16,11 @@ COPY . .
 WORKDIR /app/src
 RUN chmod +x run_all.sh
 
-# Expone el puerto de Flask (por defecto 5000)
-EXPOSE 8000
-
 # Expone el puerto de streamlit (por defecto 8501)
 EXPOSE 8501
+
+# Expone el puerto de Flask (por defecto 5000)
+EXPOSE 9000
 
 # Ejecutar el script que levanta la API y el frontend de Streamlit:
 CMD ["./run_all.sh"]
