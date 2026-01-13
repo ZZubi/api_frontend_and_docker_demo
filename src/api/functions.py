@@ -1,12 +1,9 @@
 import configparser
 import psycopg2
-import os
 from datetime import datetime, timezone
 from groq import Groq
 
 def get_api_config():
-    print("-----------------DEBUG:", os.getcwd())
-
     # 1. Crear la instancia del objeto config
     config = configparser.ConfigParser()
 
