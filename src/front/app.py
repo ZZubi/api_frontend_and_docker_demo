@@ -26,16 +26,16 @@ st_style = """
             """
 st.markdown(st_style, unsafe_allow_html=True) # Esconde los elementos específicos de streamlit
 
-# 2. Carga de configuración desde config.ini
+# 2. Carga de configuración desde secrets.ini
 config = configparser.ConfigParser()
-config.read('./config.ini')
+config.read('../secrets.ini')
 
 try:
     host = config.get('frontend','api_host')
     port = config.get('frontend','api_port')
     endpoint_url = f"http://{host}:{port}/ask_a_question"
 except KeyError:
-    st.error("Error: No se encontró la configuración de la API en config.ini")
+    st.error("Error: No se encontró la configuración de la API en secrets.ini")
     st.stop()
 
 # 3. Interfaz de Usuario (Frontend)

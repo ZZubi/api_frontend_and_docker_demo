@@ -1,14 +1,17 @@
 import configparser
 import psycopg2
+import os
 from datetime import datetime, timezone
 from groq import Groq
 
 def get_api_config():
+    print("-----------------DEBUG:", os.getcwd())
+
     # 1. Crear la instancia del objeto config
     config = configparser.ConfigParser()
 
     # 2. Leer archivo de config
-    config.read('./config.ini')
+    config.read('../secrets.ini')
 
     # 3. Acceder a los datos como si fuera un diccionario
     host = config.get('api', 'host')
@@ -22,7 +25,7 @@ def get_db_config():
     config = configparser.ConfigParser()
 
     # 2. Leer archivo de config
-    config.read('./config.ini')
+    config.read('../secrets.ini')
 
     # 3. Acceder a los datos como si fuera un diccionario
     user = config.get('database', 'user')
@@ -38,7 +41,7 @@ def get_aiservice_config():
     config = configparser.ConfigParser()
 
     # 2. Leer archivo de config
-    config.read('./config.ini')
+    config.read('../secrets.ini')
 
     # 3. Acceder a los datos como si fuera un diccionario
     api_key = config.get('ai_service', 'free_api_key')
