@@ -1,0 +1,18 @@
+[api]
+host = localhost
+port = 8000
+debug = True
+
+[frontend]
+api_host = 127.0.0.1
+api_port = 8000
+
+[database]
+user = foo
+password = foo
+host = foo
+port = 1234
+db_name = foo
+
+[ai_service]
+free_api_key = foo
