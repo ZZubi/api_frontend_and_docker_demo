@@ -1,3 +1,5 @@
 secrets.ini
+src/__pycache__/
+src/.pytest_cache/
 src/api/__pycache__/
 src/api/.pytest_cache/

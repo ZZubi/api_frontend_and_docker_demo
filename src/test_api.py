@@ -1,9 +1,9 @@
 import requests
-import functions as f
+from api import functions as f
 
 def test_success_on_ask_a_question():
-    api_host, api_port, _ = f.get_api_config()
-    url = f"http://{api_host}:{api_port}/ask_a_question"  
+    _, api_port, _ = f.get_api_config()
+    url = f"http://127.0.0.1:{api_port}/ask_a_question"  
 
     data = {'question': 'cuéntame un chiste corto'}
     response = requests.post(url, json=data)
@@ -15,7 +15,7 @@ def test_success_on_ask_a_question():
 
 def test_error_01_on_ask_a_question():
     api_host, api_port, _ = f.get_api_config()
-    url = f"http://{api_host}:{api_port}/ask_a_question"  
+    url = f"http://127.0.0.1:{api_port}/ask_a_question"  
 
     data = {'not_valid_json_key': 'whatever_content'}
     response = requests.post(url, json=data)
@@ -26,7 +26,7 @@ def test_error_01_on_ask_a_question():
 
 def test_error_02_on_ask_a_question():
     api_host, api_port, _ = f.get_api_config()
-    url = f"http://{api_host}:{api_port}/ask_a_question"  
+    url = f"http://127.0.0.1:{api_port}/ask_a_question"  
 
     data = {'question': ''} # Empty question
     response = requests.post(url, json=data)
@@ -37,7 +37,7 @@ def test_error_02_on_ask_a_question():
 
 def test_error_03_on_ask_a_question():
     api_host, api_port, _ = f.get_api_config()
-    url = f"http://{api_host}:{api_port}/ask_a_question"  
+    url = f"http://127.0.0.1:{api_port}/ask_a_question"  
 
     response = requests.post(url, json=None) # No data sent on the request
     response_json = response.json()
