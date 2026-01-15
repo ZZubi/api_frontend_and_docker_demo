@@ -39,7 +39,7 @@ except KeyError:
     st.stop()
 
 # 3. Interfaz de Usuario (Frontend)
-st.title("🛠️ Consulta a tu experto en bricolaje del hogar 🧑‍🔧")
+st.title("🛠️ BricomanIA: Consulta a tu experto en bricolaje del hogar 🧑‍🔧")
 
 # Formulario:
 with st.form(key="my_form", clear_on_submit=False):
